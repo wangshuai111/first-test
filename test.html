@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+              <!--各种属性测试--><br>
+    <script type="text/javascript">
+         // decodeURI解码中文
+//  	document.write('<br> href获取完整URL：'+decodeURI(location.href));
+//  	document.write('<br> search？后面：'+decodeURI(location.search));
+//  	
+//  	document.write('<br> host主机+端口号：'+location.host);
+//  	document.write('<br> hostname主机：'+location.hostname);
+//  	document.write('<br> pathname获取URI（路径部分）：'+decodeURI(location.pathname));
+//  	document.write('<br> port端口号：'+location.port);
+//  	document.write('<br> protocal返回协议：'+location.protocol);
+//  	document.write('<br> hash#后面内容（锚）：'+location.hash);
+
+          //获取传过来的值
+        var a=decodeURI(location.search);
+        var str=a.substr(1,a.length);//去掉？
+        var arr=str.split('&');//字符串变成数组['姓名=tom','id=99','age=19']
+        var b=new Array();
+        for(var i=0;i<arr.length;i++){
+        	var c=arr[i].split('=');//C为[**,**]格式
+        	b.push(c[1]);
+        }
+        document.write(b.toString());//tom,99,19
+    </script>
+    
+</body>
+</html>
